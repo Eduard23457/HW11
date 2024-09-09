@@ -9,7 +9,7 @@ public class Main {
         findOutTheYear(os, clientDeviceYear);
         int deliveryDistance = 95;
         int time = 1;
-        calculatingTheDelivery(time, deliveryDistance);
+        calculatingTheDelivery(deliveryDistance);
     }
 
 
@@ -37,22 +37,24 @@ public class Main {
         }
     }
 
-    public static void calculatingTheDelivery(int time, int deliveryDistance) {
+
+
+    public static String calculatingTheDelivery(int deliveryDistance) {
+        int time = 1;
         if (deliveryDistance < 20) {
-            System.out.println("Потребуется дней" + time);
         } else if ((deliveryDistance >= 20) && (deliveryDistance < 60)) {
             time = time++;
-            System.out.println("Потребуется дней " + time);
         } else if ((deliveryDistance >= 60) && (deliveryDistance < 100)) {
             time = time++;
-            System.out.println("Потребуется дней " + time);
-        } else {
-            System.out.println("Доставки нет ");
-
+        } else if (deliveryDistance > 100) {
+            return "Доставки нет";
         }
 
-    }
+    return "Потребуется дней" + time;
 }
+}
+
+
 
 
 
